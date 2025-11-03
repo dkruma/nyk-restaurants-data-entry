@@ -74,7 +74,7 @@
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">NYC Restaurants for Business Meetings</h1>
                 <p class="text-xl text-orange-100 max-w-3xl mx-auto mb-6">
-                    Comprehensive data collection of 20 top-rated restaurants in New York City suitable for business meetings
+                    Curated data collection of 19 top-rated restaurants in New York City suitable for business meetings
                 </p>
                 <div class="flex flex-wrap justify-center gap-4 text-sm">
                     <div class="flex items-center space-x-2">
@@ -83,11 +83,11 @@
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-database"></i>
-                        <span>20 Restaurants</span>
+                        <span>19 Restaurants</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-list"></i>
-                        <span>6 Data Fields</span>
+                        <span>5 Data Fields</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-star"></i>
@@ -103,19 +103,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="text-center">
-                    <div class="text-3xl font-bold text-orange-600">20</div>
+                    <div class="text-3xl font-bold text-orange-600">19</div>
                     <div class="text-sm text-gray-600 mt-1">Restaurants Listed</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl font-bold text-red-600">100%</div>
-                    <div class="text-sm text-gray-600 mt-1">Data Accuracy</div>
+                    <div class="text-3xl font-bold text-red-600">4.5</div>
+                    <div class="text-sm text-gray-600 mt-1">Average Rating</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-bold text-blue-600">27,370+</div>
                     <div class="text-sm text-gray-600 mt-1">Total Reviews</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl font-bold text-green-600">6</div>
+                    <div class="text-3xl font-bold text-green-600">5</div>
                     <div class="text-sm text-gray-600 mt-1">Data Fields</div>
                 </div>
             </div>
@@ -135,7 +135,7 @@
                         <div>
                             <h3 class="text-xl font-bold text-gray-900 mb-2">Project Objective</h3>
                             <p class="text-gray-600">
-                                Build a comprehensive database of restaurants in New York City that are suitable for business meetings, sourced from TripAdvisor with complete contact information.
+                                Build a comprehensive database of restaurants in New York City that are suitable for business meetings, sourced from TripAdvisor with publicly available information including ratings and reviews.
                             </p>
                         </div>
                     </div>
@@ -151,11 +151,14 @@
                             <ul class="text-gray-600 space-y-1">
                                 <li>✓ Restaurant Name</li>
                                 <li>✓ Website URL</li>
+                                <li>✓ Rating (TripAdvisor)</li>
                                 <li>✓ Complete Address</li>
-                                <li>✓ Phone Number</li>
-                                <li>✓ Email Address</li>
                                 <li>✓ Number of Reviews</li>
                             </ul>
+                            <p class="text-xs text-gray-500 mt-3 italic">
+                                <i class="fas fa-shield-alt mr-1"></i>
+                                Note: Sensitive contact information (phone/email) excluded from public portfolio for privacy compliance
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -166,7 +169,7 @@
     <section class="py-16 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Restaurant Database</h2>
-            <p class="text-gray-600 mb-8 text-center">Complete list of 20 restaurants with verified contact information</p>
+            <p class="text-gray-600 mb-8 text-center">Complete list of 19 restaurants with ratings and reviews from TripAdvisor</p>
             
             <!-- Original Spreadsheet Screenshot -->
             <div class="mb-8 bg-white rounded-xl shadow-lg overflow-hidden">
@@ -185,7 +188,7 @@
                 <div class="p-6">
                     <div class="border-4 border-gray-200 rounded-lg overflow-hidden">
                         <!-- Placeholder for screenshot - Replace with actual image -->
-                        <img src="img/NYC_Restaurants_For_Meetings_DataEntry_GoogleSheet.png" alt="NYC Restaurants Excel Spreadsheet" class="w-full" 
+                        <img src="data/nyc-restaurants-screenshot.png" alt="NYC Restaurants Excel Spreadsheet" class="w-full" 
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-12 text-center" style="display: none;">
                             <i class="fas fa-table text-6xl text-gray-300 mb-4"></i>
@@ -207,9 +210,16 @@
             
             <!-- Interactive Table -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="bg-gray-50 px-6 py-4 border-b">
-                    <h3 class="text-lg font-bold text-gray-900">Interactive Database View</h3>
-                    <p class="text-sm text-gray-600">Searchable and sortable table for easy access</p>
+                        <div class="bg-gray-50 px-6 py-4 border-b">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Interactive Database View</h3>
+                            <p class="text-sm text-gray-600">Searchable table showing restaurant ratings and reviews</p>
+                        </div>
+                        <span class="badge bg-orange-100 text-orange-700 px-3 py-1">
+                            <i class="fas fa-shield-alt mr-1"></i>Privacy Compliant
+                        </span>
+                    </div>
                 </div>
                 <div class="table-responsive">
                     <table class="w-full">
@@ -217,9 +227,8 @@
                             <tr>
                                 <th class="px-4 py-3 text-left font-semibold">#</th>
                                 <th class="px-4 py-3 text-left font-semibold">Restaurant Name</th>
+                                <th class="px-4 py-3 text-center font-semibold">Rating</th>
                                 <th class="px-4 py-3 text-left font-semibold">Address</th>
-                                <th class="px-4 py-3 text-left font-semibold">Phone</th>
-                                <th class="px-4 py-3 text-left font-semibold">Email</th>
                                 <th class="px-4 py-3 text-center font-semibold">Reviews</th>
                                 <th class="px-4 py-3 text-center font-semibold">Website</th>
                             </tr>
@@ -228,92 +237,156 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">1</td>
                                 <td class="px-4 py-3 font-semibold">Bourbon Steak By Michael Mina</td>
-                                <td class="px-4 py-3">160 Central Park S, NY 10019</td>
-                                <td class="px-4 py-3">+1 212-484-5120</td>
-                                <td class="px-4 py-3">info@bourbonsteaknyc.com</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.9</span></td>
+                                <td class="px-4 py-3">160 Central Park S, NY 10019-1502</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">136</span></td>
                                 <td class="px-4 py-3 text-center"><a href="https://www.bourbonsteaknyc.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">2</td>
                                 <td class="px-4 py-3 font-semibold">Lindens</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-green-100 text-green-700">⭐ 5.0</span></td>
                                 <td class="px-4 py-3">2 Renwick St, NY 10013</td>
-                                <td class="px-4 py-3">+1 929-595-7706</td>
-                                <td class="px-4 py-3">hello@lindensnyc.com</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">95</span></td>
                                 <td class="px-4 py-3 text-center"><a href="https://www.lindensnyc.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">3</td>
                                 <td class="px-4 py-3 font-semibold">Ocean Prime</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.5</span></td>
                                 <td class="px-4 py-3">123 W 52nd St, NY 10019</td>
-                                <td class="px-4 py-3">+1 212-956-1404</td>
-                                <td class="px-4 py-3">opnewyork@cameronmitchell.com</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-green-100 text-green-700">775</span></td>
-                                <td class="px-4 py-3 text-center"><a href="https://www.ocean-prime.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                                <td class="px-4 py-3 text-center"><a href="https://www.ocean-prime.com/locations/new-york-city" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">4</td>
                                 <td class="px-4 py-3 font-semibold">Altair Restaurant</td>
-                                <td class="px-4 py-3">351 W 38th St, NY 10018</td>
-                                <td class="px-4 py-3">+1 212-343-7000</td>
-                                <td class="px-4 py-3">hello@altairnyc.com</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.9</span></td>
+                                <td class="px-4 py-3">351 W 38th St Arlo Midtown, NY 10018</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">89</span></td>
                                 <td class="px-4 py-3 text-center"><a href="https://www.altairnyc.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">5</td>
                                 <td class="px-4 py-3 font-semibold">Olio E Più</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.7</span></td>
                                 <td class="px-4 py-3">3 Greenwich Avenue, NY 10014</td>
-                                <td class="px-4 py-3">+1 212-243-6546</td>
-                                <td class="px-4 py-3">contact@olioepiu.nyc</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-purple-100 text-purple-700">3,852</span></td>
                                 <td class="px-4 py-3 text-center"><a href="http://www.olioepiu.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">6</td>
                                 <td class="px-4 py-3 font-semibold">The Lobster Club</td>
-                                <td class="px-4 py-3">98 E 53rd St, NY 10022</td>
-                                <td class="px-4 py-3">+1 212-254-3000</td>
-                                <td class="px-4 py-3">info@thelobsterclub.com</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.2</span></td>
+                                <td class="px-4 py-3">98 E 53rd St Seagram Building, NY 10022</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">59</span></td>
                                 <td class="px-4 py-3 text-center"><a href="http://thelobsterclub.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">7</td>
                                 <td class="px-4 py-3 font-semibold">Westway Diner</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.4</span></td>
                                 <td class="px-4 py-3">614 Ninth Avenue, NY 10036</td>
-                                <td class="px-4 py-3">+1 212-582-7661</td>
-                                <td class="px-4 py-3">westwaydiner@gmail.com</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-purple-100 text-purple-700">2,609</span></td>
                                 <td class="px-4 py-3 text-center"><a href="https://www.westwaydiner.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">8</td>
                                 <td class="px-4 py-3 font-semibold">Andrews Coffee Shop</td>
-                                <td class="px-4 py-3">463 7th Ave, NY 10018</td>
-                                <td class="px-4 py-3">+1 212-695-1962</td>
-                                <td class="px-4 py-3">myandrewsnyc@gmail.com</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.4</span></td>
+                                <td class="px-4 py-3">463 7th Ave, NY 10018-7604</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-purple-100 text-purple-700">2,520</span></td>
                                 <td class="px-4 py-3 text-center"><a href="http://www.andrewsny.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">9</td>
                                 <td class="px-4 py-3 font-semibold">Nobu Fifty Seven</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.3</span></td>
                                 <td class="px-4 py-3">40 W 57 Street, NY 10019</td>
-                                <td class="px-4 py-3">+1 212-757-3000</td>
-                                <td class="px-4 py-3">fiftyseven@noburestaurants.com</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-purple-100 text-purple-700">1,955</span></td>
-                                <td class="px-4 py-3 text-center"><a href="https://www.noburestaurants.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                                <td class="px-4 py-3 text-center"><a href="https://www.noburestaurants.com/fifty-seven" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">10</td>
                                 <td class="px-4 py-3 font-semibold">Burger & Lobster Bryant Park</td>
-                                <td class="px-4 py-3">132 W 43rd St, NY 10036</td>
-                                <td class="px-4 py-3">+1 917-565-9044</td>
-                                <td class="px-4 py-3">inquiries.usa@burgerandlobster.com</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.4</span></td>
+                                <td class="px-4 py-3">132 W 43rd St Next to Stephen Sondheim Theatre, NY 10036-6503</td>
                                 <td class="px-4 py-3 text-center"><span class="badge bg-green-100 text-green-700">604</span></td>
-                                <td class="px-4 py-3 text-center"><a href="https://www.burgerandlobster.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                                <td class="px-4 py-3 text-center"><a href="https://www.burgerandlobster.com/locations/new-york/bryant-park" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">11</td>
+                                <td class="px-4 py-3 font-semibold">John's Coffee Shop</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.5</span></td>
+                                <td class="px-4 py-3">823 2nd Ave, NY 10017-4501</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">308</span></td>
+                                <td class="px-4 py-3 text-center"><a href="https://www.johnscoffeenyc.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">12</td>
+                                <td class="px-4 py-3 font-semibold">Le Bernardin</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.6</span></td>
+                                <td class="px-4 py-3">155 W 51st St, NY 10019-6019</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-purple-100 text-purple-700">3,675</span></td>
+                                <td class="px-4 py-3 text-center"><a href="http://www.le-bernardin.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">13</td>
+                                <td class="px-4 py-3 font-semibold">Brooklyn Diner</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.1</span></td>
+                                <td class="px-4 py-3">212 W 57th St, NY 10019-3200</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-purple-100 text-purple-700">3,036</span></td>
+                                <td class="px-4 py-3 text-center"><a href="http://brooklyndiner.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">14</td>
+                                <td class="px-4 py-3 font-semibold">The Skylark - Rooftop Bar</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.3</span></td>
+                                <td class="px-4 py-3">200 W 39th St 30th Floor, NY 10018-8242</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">399</span></td>
+                                <td class="px-4 py-3 text-center"><a href="https://www.theskylarknyc.com/lounge" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">15</td>
+                                <td class="px-4 py-3 font-semibold">RH Rooftop Restaurant</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.2</span></td>
+                                <td class="px-4 py-3">9 Ninth Avenue, NY 10014</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">202</span></td>
+                                <td class="px-4 py-3 text-center"><a href="http://www.rh.com/newyork/restaurant" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">16</td>
+                                <td class="px-4 py-3 font-semibold">Nerai</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.6</span></td>
+                                <td class="px-4 py-3">55 E 54th St Between Madison Avenue & Park Avenue, NY 10022-4206</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-green-100 text-green-700">703</span></td>
+                                <td class="px-4 py-3 text-center"><a href="http://nerainyc.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">17</td>
+                                <td class="px-4 py-3 font-semibold">Glass House Tavern</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.2</span></td>
+                                <td class="px-4 py-3">252 W. 47th St., NY 10036-1415</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-green-100 text-green-700">917</span></td>
+                                <td class="px-4 py-3 text-center"><a href="http://www.glasshousetavern.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">18</td>
+                                <td class="px-4 py-3 font-semibold">Raoul's</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.4</span></td>
+                                <td class="px-4 py-3">180 Prince St, NY 10012-2924</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">433</span></td>
+                                <td class="px-4 py-3 text-center"><a href="http://raouls.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3">19</td>
+                                <td class="px-4 py-3 font-semibold">Trinity Place</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-yellow-100 text-yellow-700">⭐ 4.3</span></td>
+                                <td class="px-4 py-3">115 Broadway Entrance Along Cedar St, NY 10006</td>
+                                <td class="px-4 py-3 text-center"><span class="badge bg-blue-100 text-blue-700">407</span></td>
+                                <td class="px-4 py-3 text-center"><a href="http://www.trinityplacenyc.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                        </tbody>text-center"><a href="https://www.burgerandlobster.com/" target="_blank" class="text-orange-600 hover:text-orange-700"><i class="fas fa-external-link-alt"></i></a></td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3">11</td>
@@ -420,7 +493,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Data Accuracy</h3>
                     <p class="text-gray-600">
-                        100% verified information with direct sourcing from TripAdvisor and restaurant official websites. All contact details manually validated.
+                        All data verified from TripAdvisor with accurate ratings and review counts. Information cross-referenced with restaurant official websites for completeness.
                     </p>
                 </div>
                 
@@ -572,7 +645,7 @@
                                 <div class="text-sm text-gray-600">Complete database in .xlsx format</div>
                             </div>
                         </div>
-                        <a href="data/NYC_Restaurants_For_Meetings_DataEntry.xlsx" class="text-orange-600 hover:text-orange-700 font-semibold">
+                        <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold">
                             <i class="fas fa-download mr-2"></i>Download
                         </a>
                     </div>
@@ -585,7 +658,7 @@
                                 <div class="text-sm text-gray-600">Universal format for easy import</div>
                             </div>
                         </div>
-                        <a href="data/NYC_Restaurants_For_Meetings_DataEntry.csv" class="text-orange-600 hover:text-orange-700 font-semibold">
+                        <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold">
                             <i class="fas fa-download mr-2"></i>Download
                         </a>
                     </div>
@@ -598,7 +671,7 @@
                                 <div class="text-sm text-gray-600">Cloud-based collaborative document</div>
                             </div>
                         </div>
-                        <a href="https://docs.google.com/spreadsheets/d/1cPz8RP1vGk1jK-GhrhBZXl6kp_3MC44hq84XoeUfBQ4/edit?gid=0#gid=0" class="text-orange-600 hover:text-orange-700 font-semibold">
+                        <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold">
                             <i class="fas fa-external-link-alt mr-2"></i>Open
                         </a>
                     </div>
@@ -618,6 +691,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Diki Darmawan</h3>
                     <p class="text-gray-600 mb-1">Data Entry Specialist</p>
+                    <p class="text-gray-600">Universitas Lampung</p>
                 </div>
                 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
