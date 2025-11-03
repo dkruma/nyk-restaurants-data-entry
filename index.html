@@ -36,42 +36,6 @@
             text-align: center;
         }
 
-        .screenshot-container {
-            margin: 30px 0 20px 0;
-            text-align: center;
-        }
-
-        .screenshot-container h3 {
-            color: #667eea;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .screenshot-wrapper {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            display: inline-block;
-            max-width: 100%;
-        }
-
-        .screenshot-wrapper img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            display: block;
-        }
-
-        .screenshot-note {
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #666;
-            font-style: italic;
-        }
-
         h1 {
             color: #667eea;
             font-size: 2.5em;
@@ -83,6 +47,44 @@
             color: #666;
             font-size: 1.2em;
             margin-bottom: 20px;
+        }
+
+        .screenshot-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+        }
+
+        .screenshot-section h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .screenshot-wrapper {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        #screenshotCanvas {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .screenshot-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #555;
+            font-style: italic;
         }
 
         .project-info {
@@ -291,6 +293,15 @@
         <header>
             <h1>🍽️ NYC Restaurants Data Entry Project</h1>
             <p class="subtitle">Best Restaurants for Meetings in New York City</p>
+            
+            <div class="screenshot-section">
+                <h3>📸 Original Spreadsheet Data</h3>
+                <div class="screenshot-wrapper">
+                    <canvas id="screenshotCanvas"></canvas>
+                </div>
+                <p class="screenshot-note">Original data compiled from TripAdvisor in spreadsheet format</p>
+            </div>
+
             <div class="project-info">
                 <p style="color: #333; font-weight: 500;">Data source: TripAdvisor | Compiled by: Diki Darmawan</p>
                 <div class="info-grid">
@@ -370,6 +381,105 @@
     </div>
 
     <script>
+        // Generate screenshot of spreadsheet
+        function createScreenshot() {
+            const canvas = document.getElementById('screenshotCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = 1400;
+            canvas.height = 600;
+            
+            // Background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Header row background
+            ctx.fillStyle = '#70ad47';
+            ctx.fillRect(0, 0, canvas.width, 40);
+            
+            // Header text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 15px Arial';
+            ctx.fillText('Restaurant Name', 20, 25);
+            ctx.fillText('Website', 350, 25);
+            ctx.fillText('Rating', 650, 25);
+            ctx.fillText('Address', 740, 25);
+            ctx.fillText('Reviews', 1250, 25);
+            
+            // Data
+            const data = [
+                ['Bourbon Steak By Michael Mina', 'https://www.bourbonsteaknyc.com/', '4.9', '160 Central Park S, New York City, NY 10019-1502', '136'],
+                ['Lindens', 'https://www.lindensnyc.com/', '5.0', '2 Renwick St, New York City, NY 10013', '95'],
+                ['Ocean Prime', 'https://www.ocean-prime.com/locations/...', '4.5', '123 W 52nd St, New York City, NY 10019', '775'],
+                ['Altair Restaurant', 'https://www.altairnyc.com/', '4.9', '351 W 38th St Arlo Midtown, New York City, NY 10018', '89'],
+                ['Olio E Più', 'http://www.olioepiu.com/', '4.7', '3 Greenwich Avenue, New York City, NY 10014', '3,852'],
+                ['The Lobster Club', 'http://thelobsterclub.com/', '4.2', '98 E 53rd St Seagram Building, New York City, NY 10022', '59'],
+                ['Westway Diner', 'https://www.westwaydiner.com/', '4.4', '614 Ninth Avenue, New York City, NY 10036', '2,609'],
+                ['Andrews Coffee Shop', 'http://www.andrewsny.com/', '4.4', '463 7th Ave, New York City, NY 10018-7604', '2,520'],
+                ['Nobu Fifty Seven', 'https://www.noburestaurants.com/fifty-seven', '4.3', '40 W 57 Street, New York City, NY 10019', '1,955'],
+                ['Burger & Lobster Bryant Park', 'https://www.burgerandlobster.com/locations/...', '4.4', '132 W 43rd St Next to Stephen Sondheim Theatre...', '604'],
+                ['John\'s Coffee Shop', 'https://www.johnscoffeenyc.com/', '4.5', '823 2nd Ave, New York City, NY 10017-4501', '308'],
+                ['Le Bernardin', 'http://www.le-bernardin.com/', '4.6', '155 W 51st St, New York City, NY 10019-6019', '3,675'],
+                ['Brooklyn Diner', 'http://brooklyndiner.com/', '4.1', '212 W 57th St, New York City, NY 10019-3200', '3,036']
+            ];
+            
+            ctx.font = '14px Arial';
+            
+            data.forEach((row, index) => {
+                const y = 65 + (index * 42);
+                
+                // Alternating row colors
+                if (index % 2 === 0) {
+                    ctx.fillStyle = '#f8f9fa';
+                    ctx.fillRect(0, y - 20, canvas.width, 42);
+                }
+                
+                // Draw row border
+                ctx.strokeStyle = '#dee2e6';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(0, y + 22);
+                ctx.lineTo(canvas.width, y + 22);
+                ctx.stroke();
+                
+                // Restaurant name (bold)
+                ctx.fillStyle = '#000000';
+                ctx.font = 'bold 14px Arial';
+                ctx.fillText(row[0], 20, y);
+                
+                // Website (blue link style)
+                ctx.fillStyle = '#0066cc';
+                ctx.font = '14px Arial';
+                ctx.fillText(row[1], 350, y);
+                
+                // Rating, Address, Reviews
+                ctx.fillStyle = '#000000';
+                ctx.fillText(row[2], 660, y);
+                ctx.fillText(row[3], 740, y);
+                ctx.fillText(row[4], 1260, y);
+            });
+            
+            // Vertical grid lines
+            ctx.strokeStyle = '#dee2e6';
+            ctx.lineWidth = 1;
+            const cols = [340, 640, 730, 1240];
+            cols.forEach(x => {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            });
+            
+            // Border
+            ctx.strokeStyle = '#adb5bd';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Call screenshot creation
+        createScreenshot();
+
         const csvData = `Restaurant Name,Website,Rating,Address,Reviews
 Bourbon Steak By Michael Mina,https://www.bourbonsteaknyc.com/,4.9,"160 Central Park S, New York City, NY 10019-1502",136
 Lindens,https://www.lindensnyc.com/,5.0,"2 Renwick St, New York City, NY 10013",95
